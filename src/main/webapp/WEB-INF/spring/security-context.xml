@@ -5,7 +5,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.0.xsd">
 
     <security:http auto-config="true" use-expressions="false">
-        <security:intercept-url pattern="/**" access="ROLE_USER"/>
+        <security:intercept-url pattern="/appointments/*" access="ROLE_USER"/>
+        <security:intercept-url pattern="/schedule/*" access="ROLE_FOO"/>
+        <security:intercept-url pattern="/**" access="ROLE_ANONYMOUS"/>
     </security:http>
 
 
@@ -13,6 +15,7 @@
         <security:authentication-provider>
             <security:user-service>
                 <security:user name="user" password="password" authorities="ROLE_USER"/>
+                <security:user name="admin" password="password" authorities="ROLE_USER,ROLE_FOO"/>
             </security:user-service>
         </security:authentication-provider>
     </security:authentication-manager>
