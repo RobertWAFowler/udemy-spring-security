@@ -20,43 +20,43 @@ import com.oreilly.security.domain.repositories.AppointmentRepository;
 @RequestMapping("/appointments")
 public class AppointmentController {
 
-	@Autowired
-	private AppointmentRepository appointmentRepository;
-	
-	@ModelAttribute
-	public Appointment getAppointment(){
-		return new Appointment();
-	}
+    @Autowired
+    private AppointmentRepository appointmentRepository;
 
-	@RequestMapping(value="/", method=RequestMethod.GET)
-	public String getAppointmentPage(){
-		return "appointments";
-	}
+    @ModelAttribute
+    public Appointment getAppointment(){
+        return new Appointment();
+    }
 
-	@ResponseBody
-	@RequestMapping(value="/save", method=RequestMethod.POST)
-	public List<Appointment> saveAppointment(@ModelAttribute Appointment appointment){
-		AutoUser user = new AutoUser();
-		user.setEmail("test@email.com");
-		user.setFirstName("Joe");
-		user.setLastName("Doe");
-		appointment.setUser(user);
-		appointment.setStatus("Initial");
-		appointmentRepository.save(appointment);
-		return this.appointmentRepository.findAll();
-	}
-	
-	@ResponseBody
-	@RequestMapping("/all")
-	public List<Appointment> getAppointments(){
-		return this.appointmentRepository.findAll();
-	}
+    @RequestMapping(value="/", method=RequestMethod.GET)
+    public String getAppointmentPage(){
+        return "appointments";
+    }
 
-	@RequestMapping("/{appointmentId}")
-	public String getAppointment(@PathVariable("appointmentId") Long appointmentId, Model model){
-		Appointment appointment = appointmentRepository.findOne(appointmentId);
-		model.addAttribute("appointment", appointment);
-		return "appointment";
-	}
-	
+    @ResponseBody
+    @RequestMapping(value="/save", method=RequestMethod.POST)
+    public List<Appointment> saveAppointment(@ModelAttribute Appointment appointment){
+        AutoUser user = new AutoUser();
+        user.setEmail("test@email.com");
+        user.setFirstName("Joe");
+        user.setLastName("Doe");
+        appointment.setUser(user);
+        appointment.setStatus("Initial");
+        appointmentRepository.save(appointment);
+        return this.appointmentRepository.findAll();
+    }
+
+    @ResponseBody
+    @RequestMapping("/all")
+    public List<Appointment> getAppointments(){
+        return this.appointmentRepository.findAll();
+    }
+
+    @RequestMapping("/{appointmentId}")
+    public String getAppointment(@PathVariable("appointmentId") Long appointmentId, Model model){
+        Appointment appointment = appointmentRepository.findOne(appointmentId);
+        model.addAttribute("appointment", appointment);
+        return "appointment";
+    }
+
 }

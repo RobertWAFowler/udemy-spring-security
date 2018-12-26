@@ -5,7 +5,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.0.xsd">
 
     <security:http auto-config="true" use-expressions="false">
-        <security:http-basic/>
+        <!--<security:http-basic/>-->
+        <security:form-login login-page="/login" login-processing-url="/login" username-parameter="custom_username"
+                             password-parameter="custom_password"/>
         <security:intercept-url pattern="/appointments/*" access="ROLE_USER"/>
         <security:intercept-url pattern="/schedule/*" access="ROLE_FOO"/>
         <security:intercept-url pattern="/**" access="ROLE_ANONYMOUS,ROLE_USER,ROLE_FOO"/>
