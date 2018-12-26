@@ -24,6 +24,7 @@
     <!-- Latest compiled and minified JavaScript -->
     <script
             src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="<c:url value="/resources/js/global.js"/>"></script>
 
 </head>
 <body>
@@ -44,6 +45,10 @@
             <input type="password" name="custom_password" class="form-control"/>
         </div>
         <sec:csrfInput/>
+        <c:if test="${param.logout !=null }">
+            <p>You have successfully been logged out.</p>
+        </c:if>
+
         <c:if test="${param.error !=null }">
             <p>Invalid Username and/or password</p>
         </c:if>

@@ -23,6 +23,8 @@
     <script
             src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
+    <script src="<c:url value="/resources/js/global.js"/>"></script>
+
 </head>
 <body>
 <jsp:include page="header.jsp"/>

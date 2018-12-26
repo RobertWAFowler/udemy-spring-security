@@ -12,8 +12,10 @@
                              password-parameter="custom_password"
                              default-target-url="/appointments/"
                              always-use-default-target="true"
-                             authentication-failure-url="/login?error=true"
-        />
+                             authentication-failure-url="/login?error=true"/>
+
+        <security:logout logout-url="/logout" logout-success-url="/login?logout=true"/>
+
         <security:intercept-url pattern="/appointments/*" access="ROLE_USER"/>
         <security:intercept-url pattern="/schedule/*" access="ROLE_FOO"/>
         <security:intercept-url pattern="/**" access="ROLE_ANONYMOUS,ROLE_USER,ROLE_FOO"/>
