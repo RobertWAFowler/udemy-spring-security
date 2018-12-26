@@ -7,7 +7,11 @@
     <security:http auto-config="true" use-expressions="false">
         <!--<security:http-basic/>-->
         <security:form-login login-page="/login" login-processing-url="/login" username-parameter="custom_username"
-                             password-parameter="custom_password"/>
+                             password-parameter="custom_password"
+                             default-target-url="/appointments/"
+                             always-use-default-target="true"
+                             authentication-failure-url="/login?error=true"
+        />
         <security:intercept-url pattern="/appointments/*" access="ROLE_USER"/>
         <security:intercept-url pattern="/schedule/*" access="ROLE_FOO"/>
         <security:intercept-url pattern="/**" access="ROLE_ANONYMOUS,ROLE_USER,ROLE_FOO"/>
