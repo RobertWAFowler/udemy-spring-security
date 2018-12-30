@@ -1,7 +1,6 @@
 package com.oreilly.security.domain.entities;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -11,8 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="AUTO_USER")
@@ -36,6 +35,11 @@ public class AutoUser {
 
     @Column(name="EMAIL")
     private String email;
+
+    @Column(name = "ROLE")
+    private String role;
+
+
 
     @JsonIgnore
     @OneToMany(mappedBy="user", cascade=CascadeType.PERSIST)
@@ -83,6 +87,14 @@ public class AutoUser {
 
     public List<Appointment> getAppointments() {
         return appointments;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public void setAppointments(List<Appointment> appointments) {
