@@ -1,4 +1,4 @@
-package com.oreilly.security.services;
+package com.oreilly.security;
 
 import com.oreilly.security.domain.repositories.AutoUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.oreilly.security.providers;
+package com.oreilly.security;
 
 import com.oreilly.security.domain.entities.AutoUser;
 import com.oreilly.security.domain.repositories.AutoUserRepository;

@@ -35,12 +35,16 @@
     <c:url value="/login" var="loginVar"/>
     <form id="appointment-form" action="${loginVar}" method="POST">
         <div class="form-group">
-            <label for="make">Username</label>
+            <label>Username</label>
             <input name="custom_username" class="form-control" />
         </div>
         <div class="form-group">
-            <label for="model">Password</label>
+            <label>Password</label>
             <input type="password" name="custom_password" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Automobile Make</label>
+            <input name="make" class="form-control" />
         </div>
         <sec:csrfInput/>
 
