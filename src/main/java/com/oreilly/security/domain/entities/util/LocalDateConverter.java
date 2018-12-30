@@ -1,17 +1,16 @@
 package com.oreilly.security.domain.entities.util;
 
-import java.sql.Date;
-import java.time.LocalDate;
-
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
+import java.sql.Date;
+import java.time.LocalDate;
 
 @Converter
 public class LocalDateConverter implements AttributeConverter<LocalDate, Date> {
 
     @Override
     public Date convertToDatabaseColumn(LocalDate localDate) {
-        return null == localDate ? null: Date.valueOf(localDate);
+        return null == localDate ? null : Date.valueOf(localDate);
     }
 
     @Override

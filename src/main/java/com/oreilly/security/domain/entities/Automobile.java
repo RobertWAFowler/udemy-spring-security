@@ -15,7 +15,6 @@ public class Automobile {
     @Column(name = "YEAR")
     private Short year;
 
-
     public String getMake() {
         return make;
     }

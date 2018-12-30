@@ -1,8 +1,8 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1"%>
+         pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,11 +10,11 @@
     <title>Kevin's Auto Service Center</title>
 
     <link rel="stylesheet"
-          href="<spring:url value="/resources/css/global.css"/>" />
+          href="<spring:url value="/resources/css/global.css"/>"/>
     <link rel="stylesheet"
-          href="<spring:url value="/resources/css/datepicker.css"/>" />
+          href="<spring:url value="/resources/css/datepicker.css"/>"/>
     <link rel="stylesheet"
-          href="<spring:url value="/resources/css/bootstrap-multiselect.css"/>" />
+          href="<spring:url value="/resources/css/bootstrap-multiselect.css"/>"/>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet"
@@ -98,15 +98,15 @@
                     </div>
                     <div class="form-group">
                         <label for="make">Make</label> <form:input path="automobile.make"
-                                                                   cssClass="form-control" />
+                                                                   cssClass="form-control"/>
                     </div>
                     <div class="form-group">
                         <label for="model">Model</label> <form:input path="automobile.model"
-                                                                     cssClass="form-control" />
+                                                                     cssClass="form-control"/>
                     </div>
                     <div class="form-group">
                         <label for="year">Year</label> <form:input path="automobile.year"
-                                                                   cssClass="form-control" />
+                                                                   cssClass="form-control"/>
                     </div>
                     <div class="form-group">
                         <label for="make">Services</label>
@@ -119,9 +119,11 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" id="btn-close" class="btn btn-default"
-                            data-dismiss="modal">Close</button>
+                            data-dismiss="modal">Close
+                    </button>
                     <button type="submit" id="btn-save" class="btn btn-primary">Save
-                        Changes</button>
+                        Changes
+                    </button>
                 </div>
             </div>
         </form:form>

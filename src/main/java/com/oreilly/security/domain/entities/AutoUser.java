@@ -128,5 +128,4 @@ public class AutoUser implements UserDetails {
         return true;
     }
 
-
 }

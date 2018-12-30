@@ -15,7 +15,8 @@ public class CustomAuthenticationToken extends UsernamePasswordAuthenticationTok
         this.make = make;
     }
 
-    public CustomAuthenticationToken(AutoUser principal, String credentials, Collection<? extends GrantedAuthority> authorities, String make) {
+    public CustomAuthenticationToken(AutoUser principal, String credentials,
+                                     Collection<? extends GrantedAuthority> authorities, String make) {
         super(principal, credentials, authorities);
         this.make = make;
     }
@@ -23,4 +24,5 @@ public class CustomAuthenticationToken extends UsernamePasswordAuthenticationTok
     public String getMake() {
         return make;
     }
+
 }

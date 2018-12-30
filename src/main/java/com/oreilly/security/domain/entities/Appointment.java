@@ -29,7 +29,7 @@ public class Appointment {
     @Column(name = "APPOINTMENT_ID")
     private Long appointmentId;
 
-    @ManyToOne(fetch=FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "USER_ID")
     private AutoUser user;
 
@@ -42,7 +42,7 @@ public class Appointment {
     private LocalDate appointmentDt;
 
     @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(name = "SERVICES", joinColumns = { @JoinColumn(name = "APPOINTMENT_ID") })
+    @CollectionTable(name = "SERVICES", joinColumns = {@JoinColumn(name = "APPOINTMENT_ID")})
     @Column(name = "NAME")
     private List<String> services = new ArrayList<String>();
 

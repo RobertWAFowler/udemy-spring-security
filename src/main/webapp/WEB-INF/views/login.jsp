@@ -1,8 +1,8 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1"%>
+         pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +27,7 @@
 
 </head>
 <body>
-<jsp:include page="header.jsp" />
+<jsp:include page="header.jsp"/>
 <div class="container">
     <div class="row">
         <h1>Services</h1>
@@ -36,15 +36,15 @@
     <form id="appointment-form" action="${loginVar}" method="POST">
         <div class="form-group">
             <label>Username</label>
-            <input name="custom_username" class="form-control" />
+            <input name="custom_username" class="form-control"/>
         </div>
         <div class="form-group">
             <label>Password</label>
-            <input type="password" name="custom_password" class="form-control" />
+            <input type="password" name="custom_password" class="form-control"/>
         </div>
         <div class="form-group">
             <label>Automobile Make</label>
-            <input name="make" class="form-control" />
+            <input name="make" class="form-control"/>
         </div>
         <sec:csrfInput/>
 

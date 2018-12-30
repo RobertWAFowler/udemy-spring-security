@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
     @Override
-    public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
+    public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
+            throws AuthenticationException {
+
         String username = super.obtainUsername(request);
         String password = super.obtainPassword(request);
         String make = request.getParameter("make");
@@ -19,6 +21,6 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
         super.setDetails(request, token);
 
         return this.getAuthenticationManager().authenticate(token);
-
     }
+
 }

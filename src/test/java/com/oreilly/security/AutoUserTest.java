@@ -1,21 +1,20 @@
 package com.oreilly.security;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-
+import com.oreilly.security.domain.entities.Appointment;
+import com.oreilly.security.domain.entities.AutoUser;
+import com.oreilly.security.domain.entities.Automobile;
+import com.oreilly.security.domain.repositories.AutoUserRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.oreilly.security.domain.entities.Appointment;
-import com.oreilly.security.domain.entities.AutoUser;
-import com.oreilly.security.domain.entities.Automobile;
-import com.oreilly.security.domain.repositories.AutoUserRepository;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations="classpath:application-context.xml")
+@ContextConfiguration(locations = "classpath:application-context.xml")
 public class AutoUserTest {
 
     @Autowired
@@ -38,7 +37,7 @@ public class AutoUserTest {
         appointment.setAppointmentDt(LocalDate.now());
         appointment.setUser(autoUser);
         appointment.setAutomobile(automobile);
-        appointment.setServices(new ArrayList<String>(){{
+        appointment.setServices(new ArrayList<String>() {{
             add("Tire Change");
             add("Oil Change");
         }});
@@ -47,6 +46,5 @@ public class AutoUserTest {
 
         autoUserRepository.save(autoUser);
     }
-
 
 }
