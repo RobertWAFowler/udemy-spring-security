@@ -1,6 +1,4 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -24,36 +22,20 @@
     <!-- Latest compiled and minified JavaScript -->
     <script
             src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="<c:url value="/resources/js/global.js"/>"></script>
 
 </head>
 <body>
-<jsp:include page="header.jsp" />
+<jsp:include page="header.jsp"/>
 <div class="container">
     <div class="row">
-        <h1>Services</h1>
+        <h1>Employee Schedule</h1>
+        <ul class="list-group">
+            <li class="list-group-item">Kevin 8am - 4pm</li>
+            <li class="list-group-item">Joey 7am - 3pm</li>
+            <li class="list-group-item">Gary 10am - 1pm</li>
+        </ul>
     </div>
-    <c:url value="/login" var="loginVar"/>
-    <form id="appointment-form" action="${loginVar}" method="POST">
-        <div class="form-group">
-            <label for="make">Username</label>
-            <input name="custom_username" class="form-control" />
-        </div>
-        <div class="form-group">
-            <label for="model">Password</label>
-            <input type="password" name="custom_password" class="form-control" />
-        </div>
-        <sec:csrfInput/>
-
-        <c:if test="${param.logout != null }">
-            <p>You have successfully been logged out.</p>
-        </c:if>
-
-        <c:if test="${param.error != null }">
-            <p>Invalid Username and Password.</p>
-        </c:if>
-
-        <button type="submit" id="btn-save" class="btn btn-primary">Login</button>
-    </form>
 </div>
 </body>
 </html>

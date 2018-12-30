@@ -31,9 +31,8 @@
             src="<spring:url value="/resources/js/bootstrap-datepicker.js"/>"></script>
     <script
             src="<spring:url value="/resources/js/bootstrap-multiselect.js"/>"></script>
-    <script src="<spring:url value="/resources/js/appointments.js"/>"></script>
-
     <script src="<c:url value="/resources/js/global.js"/>"></script>
+    <script src="<spring:url value="/resources/js/appointments.js"/>"></script>
     <script>
         var root = "${pageContext.request.contextPath}";
     </script>
